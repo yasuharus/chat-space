@@ -2,8 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -13,10 +13,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, add_index :messages, :body|
+|body|text|null: false|
 |image|string|null:false|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group_id|references| foreign_key: true|
+|user_id|references| foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -25,7 +25,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index :users, :name|
+|name|string|null: false, index: true|
 |email|string|null: false|
 
 ### Association
