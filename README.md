@@ -15,8 +15,8 @@
 |------|----|-------|
 |body|text||
 |image|string||
-|group_id|references| foreign_key: true|
-|user_id|references| foreign_key: true|
+|group_id|references| foreign_key: true, null: false|
+|user_id|references| foreign_key: true, null: false|
 
 ### Association
 - belongs_to :group
