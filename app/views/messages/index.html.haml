@@ -1,0 +1,42 @@
+%body
+.flash-box
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name SUZUKI
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            = link_to "/groups/new"
+              %i.fa.fa-deit
+          %li.side-header__box__menu__edit-user
+            = link_to "/user/483/edit"
+    .groups 
+      = link_to "/groups/1050/messages"     
+        .group
+          %p.group__group-name
+          %p.group__latest-message こんにちは
+  .chat-main 
+    .main-header 
+      .main-header__left-box
+        %h2.main-header__left-box__current-group
+        %ul.main-header__left-box__member-list
+          %li.main-header__left-box__member-list__member SUZUKI 
+      = link_to "/groups/1050/edit"
+        .main-header__edit-btn Edit
+    .messages 
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker SUZUKI
+          %p.message__upper-info__date
+        %p.message__text こんにちは
+    .form
+      %form.new_message#new_message{enctype: "multipart/form-date", action: "/groups/1050/messages, accept-charset: "UTF-8" method: post }
+        %input{name: utf8, type: hidden, vslue: ""}
+        %input{type: hidden, name: authenticity_token, valu:""}
+        .input-box
+          %input.input-box__text#message_content{type:text, name: message[content]}
+          %label.input-box__image
+            %i.fa.fa-image
+            %input.input-box__image__file#message_image{type: file,name: message[image]}
+          %input.submit-btn{name: commit, value: Send, data-distable-with: Send}
