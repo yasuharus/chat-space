@@ -11,17 +11,18 @@
                 %i.fa.fa-edit
             %li.side-header__box__menu__edit-user
               = link_to "/user/483/edit" do 
-                %i.fa.fa-cog
+                %i.fa.fa-cog 
       .groups 
         = link_to "/groups/1050/messages" do 
           .group    
-            %p.group__group-name
+            %p.group__group-name suzuki
             %p.group__latest-message こんにちは
     .chat-main 
       .main-header 
         .main-header__left-box
-          %h2.main-header__left-box__current-group
-          %ul.main-header__left-box__member-list
+          %h2.main-header__left-box__current-group AABBCC
+          %ul.main-header__left-box__member-list 
+            %li.main-header__left-box__member-list__team Member :
             %li.main-header__left-box__member-list__member SUZUKI 
         = link_to "Edit", "/groups/1050/edit", class: "main-header__edit-btn" 
       .messages 

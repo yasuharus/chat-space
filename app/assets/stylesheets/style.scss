@@ -1,0 +1,108 @@
+.wrapper {
+  haight: 300px;
+  width: 100%;
+}
+
+.chat-side {
+  width: 300px;
+  color: white;
+  float: left;
+}
+
+.side-header {
+  background-color: #253141;
+  height: 100px;
+  display: flex; 
+  align-items: center;
+  padding: 0 20px;
+
+  .side-header__box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;   
+  }   
+}
+li.side-header__box__menu__new-group {
+  display: inline;
+  i.fa.fa-edit {
+    color: white;
+  }
+}
+li.side-header__box__menu__edit-user {
+  display: inline;
+  i.fa.fa-cog {
+    color: white;
+  }
+}
+
+
+
+
+
+.groups {
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 20px 20px 0;
+  overflow: scroll;
+  }
+
+  .group {
+    p.group__group-name {
+      color: white;
+      font-size: 15px;
+      margin-bottom: 5px;
+      }
+    p.group__latest-message {
+      color: white;
+      font-size: 11px;
+    }
+  }
+
+
+.chat-main {
+  width: calc(100vw - 300px);
+  float: left;
+}
+
+.main-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #eee;
+  overflow: scroll;
+  background-color: yellow;
+    .main-header__left-box {
+      margin-top: 35px;
+
+      h2.main-header__left-box__current-group {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+        list-style: none;
+    } 
+  }  
+}
+li.main-header__left-box__member-list__team {
+  display: inline;
+  font-size: 12px;
+}
+li.main-header__left-box__member-list__member {
+  display: inline;
+  font-size: 12px;
+}
+.messages {
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color: #fafafa;
+  overflow: scroll;
+}
+
+.form {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+}
+
+
