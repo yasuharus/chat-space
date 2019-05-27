@@ -29,18 +29,20 @@
         .message
           .message__upper-info
             %p.message__upper-info__talker SUZUKI
-            %p.message__upper-info__date
+            %p.message__upper-info__date 2019/05/23(Ths) 15:49:12
           %p.message__text こんにちは
       .form
-        %form.new_message#new_message
-          %input{ vslue: ""}
-          %input{ valu:""}
+        %form.new_message#new_message 
+          %input{ value: "", type: "hidden", name: "UTF-8"}
+          %input{ valu:"", type: "hidden", name: ""}
           .input-box
-            %input.input-box__text#message_content
-            %label.input-box__image
+            %input.input-box__text#message_content{placeholder: "type a message", type: "text", name: "message[content]"}
+            %label.input-box__image{for: "message_image"}  
               %i.fa.fa-image
-              %input.input-box__image__file#message_image
-            %input.submit-btn{name: "",value: ""}
+          
+
+              %input.input-box__image__file#message_image{type: "file", name: "message[image]"}
+            %input.submit-btn{type: "submit", name: "commit", value: "Send"}
     .kl_keyboard 
       .kl_hook
       .kl_layout
