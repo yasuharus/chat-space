@@ -1,5 +1,5 @@
 %body
-  .flash-box
+
   .wrapper
     .chat-side
       .side-header
@@ -20,10 +20,9 @@
     .chat-main 
       .main-header 
         .main-header__left-box
-          %h2.main-header__left-box__current-group AABBCC
+          %h2.main-header__left-box__current-group aabbcc 
           %ul.main-header__left-box__member-list 
-            %li.main-header__left-box__member-list__team Member :
-            %li.main-header__left-box__member-list__member SUZUKI 
+            %li.main-header__left-box__member-list__member Member :SUZUKI 
         = link_to "Edit", "/groups/1050/edit", class: "main-header__edit-btn" 
       .messages 
         .message
@@ -33,14 +32,12 @@
           %p.message__text こんにちは
       .form
         %form.new_message#new_message 
-          %input{ value: "", type: "hidden", name: "UTF-8"}
-          %input{ valu:"", type: "hidden", name: ""}
+          %input.a{ value: "", type: "hidden", name: "UTF-8"}
+          %input.b{ valu:"", type: "hidden", name: ""}
           .input-box
             %input.input-box__text#message_content{placeholder: "type a message", type: "text", name: "message[content]"}
             %label.input-box__image{for: "message_image"}  
               %i.fa.fa-image
-          
-
               %input.input-box__image__file#message_image{type: "file", name: "message[image]"}
             %input.submit-btn{type: "submit", name: "commit", value: "Send"}
     .kl_keyboard 
