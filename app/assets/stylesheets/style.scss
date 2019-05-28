@@ -55,12 +55,12 @@ li.side-header__box__menu__edit-user {
   }
 
   .group {
-    p.group__group-name {
+    &__group-name {
       color: white;
       font-size: 15px;
       margin-bottom: 5px;
       }
-    p.group__latest-message {
+    .group__latest-message {
       color: white;
       font-size: 11px;
     }
@@ -80,10 +80,10 @@ li.side-header__box__menu__edit-user {
   justify-content: space-between;
   border-bottom: solid 1px #eee;
   overflow: scroll;
-    .main-header__left-box {
+    &__left-box {
       margin-top: 35px;
 
-      h2.main-header__left-box__current-group {
+      &__current-group {
         font-size: 20px;
         color: #333;
         margin-bottom: 15px;
@@ -117,10 +117,10 @@ li.main-header__left-box__member-list__member {
   .message {
     padding-bottom: 40px;
     display: block;
-    .message__upper-info {
+    &__upper-info {
       margin-bottom: 10px; 
       display: flex;
-      p.message__upper-info__talker {
+      &__talker {
         color: #434a54;
         font-size: 16px;
         font-weight: bold;
@@ -148,10 +148,6 @@ p.message__text {
   background-color: #ddd;
 }
 
-form.new_message#new_message  {
-
-}
-
 .input-box {
   position: relative;
   width: 100%;
@@ -177,8 +173,6 @@ label.input-box__image {
   right: 125px;
   cursor: pointer;
 } 
-
-
 
 input.submit-btn {
   width: 100px;
