@@ -1,0 +1,45 @@
+%body
+
+  .wrapper
+    .chat-side
+      .side-header
+        .side-header__box
+          %p.side-header__box__user-name SUZUKI
+          %ul.side-header__box__menu
+            %li.side-header__box__menu__new-group
+              = link_to "/groups/new" do 
+                %i.fa.fa-edit
+            %li.side-header__box__menu__edit-user
+              = link_to "/user/483/edit" do 
+                %i.fa.fa-cog 
+      .groups 
+        = link_to "/groups/1050/messages" do 
+          .group    
+            %p.group__group-name suzuki
+            %p.group__latest-message こんにちは
+    .chat-main 
+      .main-header 
+        .main-header__left-box
+          %h2.main-header__left-box__current-group aabbcc 
+          %ul.main-header__left-box__member-list 
+            %li.main-header__left-box__member-list__member Member :SUZUKI 
+        = link_to "Edit", "/groups/1050/edit", class: "main-header__edit-btn" 
+      .messages 
+        .message
+          .message__upper-info
+            %p.message__upper-info__talker SUZUKI
+            %p.message__upper-info__date 2019/05/23(Ths) 15:49:12
+          %p.message__text こんにちは
+      .form
+        %form.new_message#new_message 
+          %input.a{ value: "", type: "hidden", name: "UTF-8"}
+          %input.b{ valu:"", type: "hidden", name: ""}
+          .input-box
+            %input.input-box__text#message_content{placeholder: "type a message", type: "text", name: "message[content]"}
+            %label.input-box__image{for: "message_image"}  
+              %i.fa.fa-image
+              %input.input-box__image__file#message_image{type: "file", name: "message[image]"}
+            %input.submit-btn{type: "submit", name: "commit", value: "Send"}
+    .kl_keyboard 
+      .kl_hook
+      .kl_layout
