@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   def index
   end  
 
-  def edit
+  def create
   end
 
 end
