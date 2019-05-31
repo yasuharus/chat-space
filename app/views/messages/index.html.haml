@@ -10,8 +10,9 @@
               = link_to "/groups/new" do 
                 %i.fa.fa-edit
             %li.side-header__box__menu__edit-user
-              = link_to "/user/483/edit" do 
-                %i.fa.fa-cog 
+              = link_to edit_user_path(current_user) do
+                = fa_icon 'cog', class: 'icon'
+              
       .groups 
         = link_to "/groups/1050/messages" do 
           .group    
