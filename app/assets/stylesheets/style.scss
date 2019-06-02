@@ -22,6 +22,7 @@
   display: flex; 
   align-items: center;
   padding: 0 20px;
+  box-sizing: border-box;
 
   .side-header__box {
     display: flex;
@@ -52,6 +53,7 @@ li.side-header__box__menu__edit-user {
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
+  box-sizing: border-box;
   }
 
   .group {
@@ -63,6 +65,7 @@ li.side-header__box__menu__edit-user {
     .group__latest-message {
       color: white;
       font-size: 11px;
+      margin-bottom: 40px;
     }
   }
 
@@ -79,24 +82,28 @@ li.side-header__box__menu__edit-user {
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #eee;
-  overflow: scroll;
+  box-sizing: border-box;
     &__left-box {
       margin-top: 35px;
-
+      box-sizing: border-box;
       &__current-group {
         font-size: 20px;
         color: #333;
         margin-bottom: 15px;
         list-style: none;
-    } 
+        box-sizing: border-box;
+    }
+    li.main-header__left-box__member-list__member {
+      box-sizing: border-box;
+      display: flex;
+      font-size: 12px;
+      color: #999999
+      
+    }  
   }  
 }
 
-li.main-header__left-box__member-list__member {
-  display: inline-block;
-  font-size: 12px;
-  color: #999999;
-}
+
 
 .main-header__edit-btn {
   border: solid 1px #38aef0;
@@ -109,11 +116,12 @@ li.main-header__left-box__member-list__member {
   }
 
 .messages {
-  height: calc(100vh - 263px);
+  height: calc(100vh - 190px);
   padding: 46px 40px;
   background-color: #fafafa;
   overflow: scroll;
   display: block;
+  box-sizing: border-box;
   .message {
     padding-bottom: 40px;
     display: block;
@@ -146,21 +154,27 @@ p.message__text {
   height: 90px;
   padding: 0 40px;
   background-color: #ddd;
+  box-sizing: border-box;
+
+  
 }
 
 .input-box {
   position: relative;
-  width: 100%;
+  
   display: inline-flex;
+
   margin-top: 20px;
 }
 
-input.input-box__text#message_content {
+input[type="text"] {
   height: 50px;
-  width: 100%;
+  width: calc(100vw - 545px);
   padding: 0 40px 0 10px;
   color: #434a54;
-  border-style: none; 
+  border-style: none;
+  margin-top: 20px;
+
 }
 
 input.input-box__image__file#message_image {
@@ -169,8 +183,8 @@ input.input-box__image__file#message_image {
 label.input-box__image {
   font-size: 1.3rem;
   position: absolute;
-  top: 10px;
-  right: 125px;
+  margin-top: -21px;
+  right: 15px;
   cursor: pointer;
 } 
 
@@ -178,9 +192,14 @@ input.submit-btn {
   width: 100px;
   height: 50px;
   padding: 0 30px;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-top: 20px;
   background-color: #38aef0;
   color: white;
   cursor: pointer;
+  position: absolute;
+  right: 40px;
+
+
   }
 
