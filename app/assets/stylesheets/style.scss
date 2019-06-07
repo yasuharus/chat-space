@@ -155,14 +155,15 @@ p.message__text {
   padding: 0 40px;
   background-color: #ddd;
   box-sizing: border-box;
-
-  
+  display: inline-flex;
+  width: 100%;
+  position: relative;
 }
 
 .input-box {
   position: relative;
   
-  display: inline-flex;
+
 
   margin-top: 20px;
 }
@@ -183,8 +184,8 @@ input.input-box__image__file#message_image {
 label.input-box__image {
   font-size: 1.3rem;
   position: absolute;
-  margin-top: -21px;
-  right: 15px;
+  bottom: 30px;
+  right: 10px;
   cursor: pointer;
 } 
 
@@ -199,6 +200,7 @@ input.submit-btn {
   cursor: pointer;
   position: absolute;
   right: 40px;
+  bottom: 20px;
 
 
   }
