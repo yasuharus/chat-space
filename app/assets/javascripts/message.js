@@ -9,17 +9,26 @@ $(document).on('turbolinks:load', function() {
       ${ message.created_at}
     </p>
     </div>
-    <p class="message__text">
-    <p class="lower-message__content">
-      ${ message.content}
-    </p>
-    </p>
+    <p class="message__text"></p>`
+
+    if (message.content != null){
+      html += `<p class="lower-message__content">${ message.content }</p>`
+    }
+
+    if (message.image != null) {
+      html += `<img src ="${ message.image }" , class: 'lower-message__image'>`
+    }
+      
     
-    </div>`
+    
+    
+    
+    return html;
   }
 
   $("#new_message").on("submit", function(e) {
     e.preventDefault();
+    
     var formData = new FormData(this);
     var url = $(this).attr("action")
     $.ajax({
@@ -32,9 +41,12 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      $('.messages').append(html)
-      $('.input-box__text').val('')
+      $('.messages').append(html);
+      $('.input-box__text').val('');
+      $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight});
+     
     })
+    
     .fail(function() {
       alert('error');
     })
