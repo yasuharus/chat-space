@@ -168,7 +168,7 @@ p.message__text {
   margin-top: 20px;
 }
 
-input[type="text"] {
+input[type="text"]#message_content {
   height: 50px;
   width: calc(100vw - 545px);
   padding: 0 40px 0 10px;
