@@ -25,8 +25,7 @@
         .main-header__left-box
           %h2.main-header__left-box__current-group  
             = @group.name
-          %ul.main-header__left-box__member-list
-            
+          %ul.main-header__left-box__member-list         
             Member :
             - @group.users.each do |user|
               %li.main-header__left-box__member-list__member #{user.name}
@@ -40,10 +39,4 @@
             = f.label :image, class: 'input-box__image', for: "message_image" do
               = fa_icon 'picture-o', class: 'icon'
               = f.file_field :image, class: 'input-box__image__file', id: 'message_image'
-          = f.submit 'Send', class: 'submit-btn'
-
-        
-      
-
-        
-    
+          = f.submit 'Send', class: 'submit-btn'  

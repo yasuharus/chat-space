@@ -24,27 +24,16 @@ class UsersController < ApplicationController
       member_users << current_user.id
       if params[:group_users]
         params[:group_users].map do |user_id|
-        member_users << user_id.to_i
-        
-      end
-    
+        member_users << user_id.to_i 
+      end 
     end
 
     return member_users
     end
 
-
   private
 
   def user_params
     params.require(:user).permit(:name, :emall)
-  end
-
-  
+  end 
 end
-
-
-
-
-# @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
-# @users = User.where('name LIKE(?)', "%#{params[:name]}%").where.not(id:current_user.id)
