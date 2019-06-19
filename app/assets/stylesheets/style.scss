@@ -92,17 +92,27 @@ li.side-header__box__menu__edit-user {
         margin-bottom: 15px;
         list-style: none;
         box-sizing: border-box;
-    }
-    li.main-header__left-box__member-list__member {
-      box-sizing: border-box;
-      display: flex;
-      font-size: 12px;
-      color: #999999
-      
-    }  
+    }   
   }  
 }
 
+ul.main-header__left-box__member-list {
+  display: flex;
+  font-size: 12px;
+  color: #999999;
+  box-sizing: border-box; 
+}
+
+
+li.main-header__left-box__member-list__member {
+  box-sizing: border-box;
+  margin-left: 0.3rem;
+  
+  font-size: 12px;
+  color: #999999
+  
+  
+}  
 
 
 .main-header__edit-btn {
@@ -143,7 +153,7 @@ li.side-header__box__menu__edit-user {
     }
   }
 }
-p.message__text {
+p.lower-message__content {
   font-size: 14px;
   color: #434a54;
   margin-bottom: 10px;
@@ -168,7 +178,7 @@ p.message__text {
   margin-top: 20px;
 }
 
-input[type="text"] {
+input[type="text"]#message_content {
   height: 50px;
   width: calc(100vw - 545px);
   padding: 0 40px 0 10px;
