@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}" >
     <div class="message__upper-info">
     <p class="message__upper-info__talker">
-      ${ message.name}
+      ${ message.user_name}
     </p>
     <p class="message__upper-info__date">
       ${ message.created_at}
@@ -17,12 +17,7 @@ $(document).on('turbolinks:load', function() {
 
     if (message.image != null) {
       html += `<img src ="${ message.image }" , class: 'lower-message__image'>`
-    }
-      
-    
-    
-    
-    
+    }   
     return html;
   }
 
@@ -55,4 +50,24 @@ $(document).on('turbolinks:load', function() {
       $(".submit-btn").removeAttr("disabled");
     });   
   });
+
+  var reloadMessages = function() {
+    last_message_id = $(".message:last").data("id");
+    $.ajax({
+      url: "/groups/:group_id/messages",
+      type: 'GET',
+      dataType: "json",
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        buildHTML(message);
+      })
+
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
 });
