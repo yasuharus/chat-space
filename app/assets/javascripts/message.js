@@ -54,29 +54,34 @@ $(document).on('turbolinks:load', function() {
   var reloadMessages = function() {
     last_message_id = $(".message:last").data("id");
     group_id = $(".main-header__left-box").data("groupid");
-    
     $.ajax({
-      url:`/groups/${ group_id }/messages`,
+      url:`/groups/${group_id}/api/messages`,
       type: 'GET',
       dataType: "json",
       data: {id: last_message_id}
     })
-    console.log(group_id)
-    console.log(last_message_id)
-   
     .done(function(messages) {
       var insertHTML = '';
-      var html = $.each(messages, function(i, message) {
+      var html = messages.forEach(function(message) {
+        console.log(message)
         buildHTML(message);
       });
+      // console.log(html)
       insertHTML = html
       $('.messages').append(insertHTML);
       $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight});
     })
-    console.log(insertHTML)
+    //  console.log(insertHTML)
     .fail(function() {
       console.log('error');
     });
   };
-  //  setInterval(reloadMessages, 5000);
+  // setInterval(reloadMessages, 5000);
+  $(window).on('load', function() {
+    var url = location.href
+    group_id = $(".main-header__left-box").data("groupid");
+    if (url == `http://localhost:3000/groups/${ group_id }/messages`) {
+        //  setInterval(reloadMessages, 5000);
+    }
+  });  
 });
