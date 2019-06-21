@@ -61,27 +61,21 @@ $(document).on('turbolinks:load', function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      var insertHTML = '';
-      var html = messages.forEach(function(message) {
-        console.log(message)
-        buildHTML(message);
-      });
-      // console.log(html)
-      insertHTML = html
-      $('.messages').append(insertHTML);
-      $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight});
+      messages.forEach(function(message) {
+        var html = buildHTML(message);
+        $('.messages').append(html);
+        $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight});
+      }); 
     })
-    //  console.log(insertHTML)
     .fail(function() {
       console.log('error');
     });
   };
-  // setInterval(reloadMessages, 5000);
   $(window).on('load', function() {
     var url = location.href
     group_id = $(".main-header__left-box").data("groupid");
     if (url == `http://localhost:3000/groups/${ group_id }/messages`) {
-        //  setInterval(reloadMessages, 5000);
+        setInterval(reloadMessages, 5000);
     }
   });  
 });
