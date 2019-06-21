@@ -53,21 +53,30 @@ $(document).on('turbolinks:load', function() {
 
   var reloadMessages = function() {
     last_message_id = $(".message:last").data("id");
+    group_id = $(".main-header__left-box").data("groupid");
+    
     $.ajax({
-      url: "/groups/:group_id/messages",
+      url:`/groups/${ group_id }/messages`,
       type: 'GET',
       dataType: "json",
       data: {id: last_message_id}
     })
+    console.log(group_id)
+    console.log(last_message_id)
+   
     .done(function(messages) {
       var insertHTML = '';
-      $.each(messages, function(i, message) {
+      var html = $.each(messages, function(i, message) {
         buildHTML(message);
-      })
-
+      });
+      insertHTML = html
+      $('.messages').append(insertHTML);
+      $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight});
     })
+    console.log(insertHTML)
     .fail(function() {
       console.log('error');
     });
   };
+  //  setInterval(reloadMessages, 5000);
 });
