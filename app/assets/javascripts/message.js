@@ -61,6 +61,7 @@ $(document).on('turbolinks:load', function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      
       if (messages.length > 0) {
         messages.forEach(function(message) {
           var html = buildHTML(message);
@@ -77,7 +78,7 @@ $(document).on('turbolinks:load', function() {
     var url = location.href
     group_id = $(".main-header__left-box").data("groupid");
     if (url == `http://localhost:3000/groups/${ group_id }/messages`) {
-        setInterval(reloadMessages, 5000);
+       setInterval(reloadMessages, 5000);
     }
   });  
 });
