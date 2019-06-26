@@ -62,7 +62,6 @@ $(document).on('turbolinks:load', function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log("a")
       if (messages.length > 0) {
         messages.forEach(function(message) {
           var html = buildHTML(message);
@@ -79,7 +78,6 @@ $(document).on('turbolinks:load', function() {
   $(window).on('load', function() {
     var url = location.href
     group_id = $(".main-header__left-box").data("groupid");
-  
        setInterval(reloadMessages, 5000);
 
   });  
