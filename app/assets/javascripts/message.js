@@ -54,6 +54,7 @@ $(document).on('turbolinks:load', function() {
   var reloadMessages = function() {
     last_message_id = $(".message:last").data("id");
     group_id = $(".main-header__left-box").data("groupid");
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url:`/groups/${group_id}/api/messages`,
       type: 'GET',
@@ -61,7 +62,7 @@ $(document).on('turbolinks:load', function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      
+      console.log("a")
       if (messages.length > 0) {
         messages.forEach(function(message) {
           var html = buildHTML(message);
@@ -74,11 +75,12 @@ $(document).on('turbolinks:load', function() {
       alert('error');
     });
   };
+ }
   $(window).on('load', function() {
     var url = location.href
     group_id = $(".main-header__left-box").data("groupid");
-    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+  
        setInterval(reloadMessages, 5000);
-    }
+
   });  
 });
