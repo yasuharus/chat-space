@@ -77,7 +77,7 @@ $(document).on('turbolinks:load', function() {
   $(window).on('load', function() {
     var url = location.href
     group_id = $(".main-header__left-box").data("groupid");
-    if (url == `http://localhost:3000/groups/${ group_id }/messages`) {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
        setInterval(reloadMessages, 5000);
     }
   });  
